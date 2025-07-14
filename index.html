@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset=UTF-8/>
+    <title>Silly Project</title>
+    <style>
+      .card{
+        width: 200px;
+        heigt: 150px;
+        background-color: silver;
+        color: #333;
+        display: flex;
+        justify-content: left;
+        margun: 20px auto;
+        border-radius: 50px;
+        transition: background-color 0.3s;
+        cursor: pointer;
+        font-family: Monospace, Times New Roman;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card" id="card">¡Pasame el mouse!</div>
+    <button id=addCard>➕</button>
+    <script>
+      const card = document.getElementById('card');
+      const addCardBtn = document.getElementById('addCard')
+      card.addEventListener('click',()=>{
+        card.style.backgraundColor = getRandomColor();
+      });
+      card.addEventListener('mousover',()=>){
+        card.textContent="Hola!";
+      });
+      card.addEventListener('click',()=>{
+        const newCard = card.cloneNode(true);
+        document.body.appendChild(newCard);
+      });
+      funtion getrandomColor(){
+        const Letters = '0123456789ABCDEF';
+        let Color = '#';
+        for(let i =0; i<6; i++){
+          color+=leters[Math.floor(Math.random()*16)];
+        }
+        return color;
+      }
+    </script>
+  </body>
