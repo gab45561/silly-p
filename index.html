@@ -7,12 +7,13 @@
       .card{
         width: 200px;
         heigt: 150px;
-        background-color: silver;
+        background-color: pink;
         color: #333;
         display: flex;
-        justify-content: left;
+        aling-items:center;
+        justify-content: center;
         margun: 20px auto;
-        border-radius: 50px;
+        border-radius: 10px;
         transition: background-color 0.3s;
         cursor: pointer;
         font-family: Monospace, Times New Roman;
@@ -31,6 +32,9 @@
       card.addEventListener('mousover',()=>){
         card.textContent="Hola!";
       });
+      card.addEventListener('mousout',()=>){
+        card.textContent="Pasame el Mouse!";
+        });
       card.addEventListener('click',()=>{
         const newCard = card.cloneNode(true);
         document.body.appendChild(newCard);
