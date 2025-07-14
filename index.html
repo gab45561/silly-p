@@ -24,28 +24,33 @@
     <div class="card" id="card">¡Pasame el mouse!</div>
     <button id=addCard>➕</button>
     <script>
-      const card = document.getElementById('card');
-      const addCardBtn = document.getElementById('addCard')
-      card.addEventListener('click',()=>{
-        card.style.backgraundColor = getRandomColor();
-      });
-      card.addEventListener('mousover',()=>){
-        card.textContent="Hola!";
-      });
-      card.addEventListener('mousout',()=>){
-        card.textContent="Pasame el Mouse!";
-        });
-      card.addEventListener('click',()=>{
-        const newCard = card.cloneNode(true);
-        document.body.appendChild(newCard);
-      });
-      funtion getrandomColor(){
-        const Letters = '0123456789ABCDEF';
-        let Color = '#';
-        for(let i =0; i<6; i++){
-          color+=leters[Math.floor(Math.random()*16)];
-        }
-        return color;
-      }
+  const card = document.getElementById('card');
+  const addCardBtn = document.getElementById('addCard');
+
+  card.addEventListener('click', () => {
+    card.style.backgroundColor = getRandomColor();
+  });
+
+  card.addEventListener('mouseover', () => {
+    card.textContent = "¡Hola!";
+  });
+
+  card.addEventListener('mouseout', () => {
+    card.textContent = "¡Pásame el mouse!";
+  });
+
+  addCardBtn.addEventListener('click', () => {
+    const newCard = card.cloneNode(true);
+    document.body.appendChild(newCard);
+  });
+
+  function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
     </script>
   </body>
